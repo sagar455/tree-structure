@@ -7,7 +7,6 @@ const dataSource = [
     files: [
       {
         name: "Document1.jpg",
-      
       },
 
       {
@@ -46,7 +45,6 @@ const dataSource = [
       {
         name: "Drivers.jpg",
         collapsed: false,
-      
       },
     ],
   },
@@ -70,7 +68,6 @@ const dataSource = [
       },
     ],
   },
- 
 ];
 
 export default dataSource;

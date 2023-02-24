@@ -1,11 +1,9 @@
 import React from "react";
-import './App.css'
+import "./App.css";
 import dataSource from "./data/dataSource";
 import TreeView from "react-treeview";
 
 import "react-treeview/react-treeview.css";
-
-
 
 const App = () => {
   return (
@@ -21,13 +19,17 @@ const App = () => {
               key={type + "|" + i}
               nodeLabel={label}
               defaultCollapsed={true}
-              className ="nodeValue"
+              className="nodeValue"
             >
               {node.files.map((files) => {
                 const label2 = <span className="node">{files.name}</span>;
 
                 return (
-                  <TreeView nodeLabel={label2} key={files.name} className ="nodeValue"></TreeView>
+                  <TreeView
+                    nodeLabel={label2}
+                    key={files.name}
+                    className="nodeValue"
+                  ></TreeView>
                 );
               })}
             </TreeView>

@@ -1,5 +1,5 @@
-body{
-    background-color: grey;
+body {
+  background-color: grey;
 }
 
 .MainDiv {
@@ -10,7 +10,6 @@ body{
   box-shadow: 5px 10px black;
 }
 
-.node{
+.node {
   color: whitesmoke;
 }
-

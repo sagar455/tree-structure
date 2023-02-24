@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import './App.css'
+import dataSource from "./data/dataSource";
+import TreeView from "react-treeview";
 
-function App() {
+import "react-treeview/react-treeview.css";
+
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="MainDiv">
+      <div class="container">
+        {dataSource.map((node, i) => {
+          const type = node.type;
+
+          const label = <span className="node">{type}</span>;
+
+          return (
+            <TreeView
+              key={type + "|" + i}
+              nodeLabel={label}
+              defaultCollapsed={true}
+              className ="nodeValue"
+            >
+              {node.files.map((files) => {
+                const label2 = <span className="node">{files.name}</span>;
+
+                return (
+                  <TreeView nodeLabel={label2} key={files.name} className ="nodeValue"></TreeView>
+                );
+              })}
+            </TreeView>
+          );
+        })}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
